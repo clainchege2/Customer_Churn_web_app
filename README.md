@@ -1,38 +1,28 @@
-The ML notebook performs a comprehensive analysis and modeling of customer churn using a dataset named 'churn.csv'. 
+This project predicts customer churn probability using pre-trained machine learning models and generates personalized emails with retention incentives based on customer profiles. The application is built using Python, Streamlit for the user interface, OpenAI for generating explanations and email content, and Retrieval-Augmented Generation (RAG) to enhance email personalization.
 
-**Here's a breakdown of the notebook's key steps:**
+Key Features:
+Churn Prediction Models: The project uses several pre-trained models, including XGBoost, Decision Tree, Naive Bayes, Random Forest, K-Nearest Neighbors, Logistic Regression, and a Voting Classifier. These models, trained in the **ML notebook**, predict the likelihood of customer churn based on input features like credit score, balance, age, and activity level.
 
-1. **Data Loading and Exploration:** 
-   - It loads the dataset using pandas and explores it with descriptive statistics and visualizations (histograms, box plots, scatter plots, count plots).
-   - The visualizations provide insights into the distribution of key features like Age, CreditScore, and Balance and their relationship with the target variable (Exited).
+Prediction Explanation: Once a prediction is made, OpenAI is utilized to generate human-readable explanations for why a customer is at risk (or not) of churning. The explanation is based on the top 10 most important features from the model, such as number of products, age, and activity status.
 
-2. **Data Preprocessing:**
-   - It removes irrelevant columns like RowNumber, CustomerId, Surname.
-   - Handles missing values (if any) by dropping them.
-   - Converts categorical features to numerical using one-hot encoding.
-   - Splits the data into training and testing sets.
-   - Scales the numerical features using StandardScaler.
+Incentive Email Generation (RAG): For customers at risk of churning, the tool generates personalized emails offering retention incentives. Retrieval-Augmented Generation (RAG) is implemented to fetch real-world offers and use this information to enhance the email content. This allows for more accurate and relevant retention offers based on customer profiles.
 
-3. **Model Training and Evaluation:**
-   - Trains multiple machine learning models (Logistic Regression, Decision Tree, Random Forest, SVM, KNN, Naive Bayes, XGBoost) on the training data.
-   - Evaluates each model using accuracy, classification report, and confusion matrix.
-   - Saves each trained model using pickle for future use.
-
-4. **Feature Importance Analysis:**
-   - Analyzes the feature importance scores of the XGBoost model.
-
-5. **SMOTE for Handling Class Imbalance:**
-   - Applies SMOTE (Synthetic Minority Over-sampling Technique) to address the potential class imbalance in the target variable (Exited).
-   - Retrains the models on the resampled data.
-
-6. **Ensemble Learning (Voting Classifier):**
-   - Creates a Voting Classifier combining Random Forest, XGBoost, and SVM models.
-   - Evaluates the Voting Classifier using both soft and hard voting strategies.
-
-7. **Hyperparameter Tuning (Grid Search):**
-   - Performs hyperparameter tuning for the XGBoost model using GridSearchCV.
-   - Optimizes the model for recall and accuracy.
-   - Saves the best-performing tuned XGBoost model.
-
-
-**Overall, the notebook aims to build a robust predictive model for customer churn by exploring data, applying various machine learning algorithms, handling class imbalance, and optimizing model performance through hyperparameter tuning and ensemble methods.** 
+How It Works:
+Data Input: Users provide customer data, such as credit score, location, age, balance, and more.
+Churn Prediction: The input is fed into pre-trained machine learning models (trained in the ML notebook) to predict the likelihood of churn.
+Explanations: An explanation is generated for the prediction, detailing key features influencing the outcome.
+RAG-Based Email Generation: For customers at risk of churn, the tool uses Retrieval-Augmented Generation to fetch real-world offers and generate a personalized retention email.
+Models Used:
+XGBoost
+Decision Tree
+Naive Bayes
+Random Forest
+K-Nearest Neighbors (KNN)
+Logistic Regression
+Voting Classifier (Soft)
+Technologies:
+**Python**: For data processing and machine learning model implementation.
+**Streamlit**: To create an interactive web application.
+**OpenAI API**: For generating natural language explanations and personalized email content.
+**RAG** (Retrieval-Augmented Generation): To fetch and integrate real-time incentives into email generation.
+**Pickle**: For saving and loading machine learning models.
