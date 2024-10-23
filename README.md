@@ -26,6 +26,7 @@ Technologies:
 **OpenAI API**: For generating natural language explanations and personalized email content.
 **RAG** (Retrieval-Augmented Generation): To fetch and integrate real-time incentives into email generation.
 **Pickle**: For saving and loading machine learning models.
+
 **How to run the files.**
 1.Open the Model_training Notebook and run all cell to eplore the dataset and create the ML models.
 2. Next go to replit.com and upload both the Replit_notebook and utils.py file.
