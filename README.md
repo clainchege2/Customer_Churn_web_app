@@ -28,7 +28,7 @@ Technologies:
 **Pickle**: For saving and loading machine learning models.
 
 **How to run the files.**
-1. Open the Model_training Notebook and run all cell to eplore the dataset and create the ML models.
+1. Open the Model_training Notebook and run all cells to eplore the dataset and create the ML models.
 2. Next go to replit.com and upload both the Replit_notebook and utils.py file.
   * Makesure to install the streamlit template to run the files.
  
